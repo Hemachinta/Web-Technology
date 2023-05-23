@@ -1,0 +1,15 @@
+<html>
+   <head>   
+      <title>result</title>
+  </head>
+  <body>
+  <br><br><br><br>
+  <br><br><br><br>
+      <center><p>SCORE:</p>
+      <span id="res"></span>
+      <script>
+         document.getElementById("res").innerHTML=localStorage.getItem("result");
+      </script>
+	  </center>
+  </body>
+</html>

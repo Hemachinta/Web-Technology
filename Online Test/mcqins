@@ -1,0 +1,22 @@
+<html> 
+ <head> 
+ <Ɵtle>Texƞield</Ɵtle>
+ </head> 
+ <body> 
+ <form acƟon="insquesƟon.php" method="POST">
+ <label for="quesƟon">quesƟon</label>
+ <input type="text" name="quesƟon" id="quesƟon"><br>
+ <label for="opƟon1">opƟon1</label>
+ <input type="text" name="opƟon1" id="opƟon1"><br>
+ <label for="opƟon2">opƟon2</label>
+ <input type="text" name="opƟon2" id="opƟon2"><br>
+ <label for="opƟon3">opƟon3</label>
+ <input type="text" name="opƟon3" id="opƟon3"><br>
+ <label for="opƟon4">opƟon4</label>
+ <input type="text" name="opƟon4" id="opƟon4"><br>
+ <label for="answer">Answer</label> 
+ <input type="text" name="answer" id="answer"><br> 
+ <input type="submit" value="submit"> 
+ </form> 
+ </body> 
+</html> 

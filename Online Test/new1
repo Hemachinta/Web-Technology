@@ -1,0 +1,198 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+$conn = new mysqli($servername, $username,'', $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = mysqli_query($conn, "SELECT * FROM mcq");
+$count=0;
+   while($row = mysqli_fetch_array($sql)) {
+   $a[]=$row['Qno'];
+   $b[] = $row['Question'];
+   $c[]=$row['Option1'];
+   $d[]=$row['Option2'];
+   $e[]=$row['Option3'];
+   $f[]=$row['Option4'];
+   $g[]=$row['Answer'];
+   $count=$count+1;
+   
+}
+?> 
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title> Fetch Data From Database </title> 
+	</head> 
+	<body>
+	<script>
+		var seconds=60;
+          function displayseconds(){
+               seconds -=1;
+			   if(seconds==10){
+				   alert("Time Remaining only 10 seconds");
+			   }
+               document.getElementById("secondsdisplay").innerText="Time remaining :"+seconds+"seconds";
+          }
+          setInterval(displayseconds,1000);
+          function redirect(){
+                 validateTest();
+                
+          }
+          setTimeout("redirect()",60000);
+		function validateTest() {
+			var q1 = document.forms["testForm"]["Q1"].value;
+			var q2 = document.forms["testForm"]["Q2"].value;
+			var q3 = document.forms["testForm"]["Q3"].value;
+			var q4 = document.forms["testForm"]["Q4"].value;
+			var q5 = document.forms["testForm"]["Q5"].value;
+			var q6 = document.forms["testForm"]["Q6"].value;
+			var q7 = document.forms["testForm"]["Q7"].value;
+			var q8 = document.forms["testForm"]["Q8"].value;
+			var q9 = document.forms["testForm"]["Q9"].value;
+
+
+			var score = 0;
+
+			if (q1 == "C") {
+				score++;
+			}
+
+
+			if (q2 == "D") {
+				score++;
+			}
+
+			if (q3 == "B") {
+				score++;
+			}
+			if (q4 == "B") {
+				score++;
+			}
+
+
+			if (q5 == "D") {
+				score++;
+			}
+
+			if (q6 == "B") {
+				score++;
+			}
+			if (q7 == "A") {
+				score++;
+			}
+
+
+			if (q8 == "B") {
+				score++;
+			}
+
+			if (q9 == "A") {
+				score++;
+			}
+
+              alert("you scored"+score +"out of 10");
+              localStorage.setItem("result",score);
+              window.location.href="score.html";
+		}
+		</script>
+	<div id="secondsdisplay"></div>
+	<form name="testForm">
+	        <?php
+				echo $a[0];
+				echo $b[0];
+				?>
+				
+			<br>
+			<input type="radio" name="Q1" value="A"><?php echo $c[0];?><br>
+			<input type="radio" name="Q1"value="B"><?php echo $d[0];?><br>
+			<input type="radio" name="Q1"value="C"><?php echo $e[0];?><br>
+			<input type="radio" name="Q1" value="D"><?php echo $f[0];?><br>
+			<?php
+				echo $a[1];
+				echo $b[1];
+				?>
+				
+			<br>
+			<input type="radio" name="Q2"value="A"><?php echo $c[1];?><br>
+			<input type="radio" name= "Q2"value="B"><?php echo $d[1];?><br>
+			<input type="radio" name= "Q2"value="C"><?php echo $e[1];?><br>
+			<input type="radio" name="Q2" value="D"><?php echo $f[1];?><br>
+			<?php
+				echo $a[2];
+				echo $b[2];
+				?>
+				
+			<br>
+			<input type="radio" name="Q3" value="A"><?php echo $c[2];?><br>
+			<input type="radio" name="Q3"value="B"><?php echo $d[2];?><br>
+			<input type="radio" name="Q3"value="C"><?php echo $e[2];?><br>
+			<input type="radio" name="Q3" value="D"><?php echo $f[2];?><br>
+			<?php
+				echo $a[3];
+				echo $b[3];
+				?>
+				
+			<br>
+			<input type="radio" name="Q4" value="A"><?php echo $c[3];?><br>
+			<input type="radio" name= "Q4" value="B"><?php echo $d[3];?><br>
+			<input type="radio" name="Q4" value="C"><?php echo $e[3];?><br>
+			<input type="radio" name="Q4" value="D"><?php echo $f[3];?><br>
+			<?php
+				echo $a[4];
+				echo $b[4];
+				?>
+				
+			<br>
+			<input type="radio" name="Q5" value="A"><?php echo $c[4];?><br>
+			<input type="radio" name="Q5" value="B"><?php echo $d[4];?><br>
+			<input type="radio" name="Q5" value="C"><?php echo $e[4];?><br>
+			<input type="radio" name="Q5" value="D"><?php echo $f[4];?><br>
+			<?php
+				echo $a[5];
+				echo $b[5];
+				?>
+				
+			<br>
+			<input type="radio" name="Q6" value="A"><?php echo $c[5];?><br>
+			<input type="radio" name="Q6" value="B"><?php echo $d[5];?><br>
+			<input type="radio" name="Q6" value="C"><?php echo $e[5];?><br>
+			<input type="radio" name="Q6" value="D"><?php echo $f[5];?><br>
+			<?php
+				echo $a[6];
+				echo $b[6];
+				?>
+				
+			<br>
+			<input type="radio" name="Q7" value="A"><?php echo $c[6];?><br>
+			<input type="radio" name="Q7" value="B"><?php echo $d[6];?><br>
+			<input type="radio" name="Q7" value="C"><?php echo $e[6];?><br>
+			<input type="radio" name="Q7" value="D"><?php echo $f[6];?><br>
+			<?php
+				echo $a[7];
+				echo $b[7];
+				?>
+				
+			<br>
+			<input type="radio" name="Q8" value="A"><?php echo $c[7];?><br>
+			<input type="radio" name="Q8" value="B"><?php echo $d[7];?><br>
+			<input type="radio" name="Q8" value="C"><?php echo $e[7];?><br>
+			<input type="radio" name="Q8" value="D"><?php echo $f[7];?><br>
+			<?php
+				echo $a[8];
+				echo $b[8];
+				?>
+				
+			<br>
+			<input type="radio" name="Q9" value="A"><?php echo $c[8];?><br>
+			<input type="radio" name="Q9" value="B"><?php echo $d[8];?><br>
+			<input type="radio" name="Q9" value="C"><?php echo $e[8];?><br>
+			<input type="radio" name="Q9" value="D"><?php echo $f[8];?><br>
+		<input type="submit" value="submit" onclick="validateTest()" disabled="true">
+		</form>
+	</body>
+</html>

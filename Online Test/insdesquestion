@@ -3,9 +3,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'test');
 if (!$conn) { 
  die("Connection failed: " . mysqli_connect_error());
 } 
-$quesƟon = $_POST['quesƟon'];
+$question = $_POST['quesƟon'];
 $answer = $_POST['answer']; 
-$sql = "INSERT INTO descripƟve(Question,Answer)
+$sql = "INSERT INTO descriptive(Question,Answer)
  VALUES ('$question','$answer')";
 if (mysqli_query($conn, $sql)) { 
  echo "inserted"; 

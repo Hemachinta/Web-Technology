@@ -6,7 +6,6 @@ if (!$conn) {
 $sql="SELECT * FROM `result`"; 
 $result=$conn->query($sql); 
 if ($result->num_rows > 0) { 
- // output data of each row 
  while($row = $result->fetch_assoc()) { 
  echo "ROllNo: ".$row["RollNo"]." "."MARKS: ".$row["Marks"]."<br>"; 
  } 

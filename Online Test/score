@@ -1,20 +1,20 @@
-<?php error_reporƟng(E_ERROR | E_WARNING | E_PARSE);
+<?php error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
 $dbname = "test"; 
 $conn = new mysqli($servername, $username,'', $dbname); 
 if (!$conn) { 
- die("ConnecƟon failed: " . mysqli_connect_error());
+ die("Connection failed: " . mysqli_connect_error());
 } 
 $sql = mysqli_query($conn, "SELECT * FROM mcq"); 
 $count=0; 
  while($row = mysqli_fetch_array($sql)) { 
- $b[] = $row['QuesƟon'];
- $c[]=$row['OpƟon1'];
- $d[]=$row['OpƟon2'];
- $e[]=$row['OpƟon3'];
- $f[]=$row['OpƟon4'];
+ $b[] = $row['Question'];
+ $c[]=$row['Option1'];
+ $d[]=$row['Option2'];
+ $e[]=$row['Option3'];
+ $f[]=$row['Option4'];
  $g[]=$row['Answer']; 
  $count=$count+1; 
  

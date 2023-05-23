@@ -1,137 +1,61 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-$conn = new mysqli($servername, $username,'', $dbname);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql = mysqli_query($conn, "SELECT * FROM descriptive");
-
-   while($row = mysqli_fetch_array($sql)) {
-   $b[]=$row['Qno'];
-   $a[] = $row['Question'];
-   $c[]=$row['Answer'];
-}
+<?php 
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "test"; 
+$conn = new mysqli($servername, $username,'', $dbname); 
+if (!$conn) { 
+ die("ConnecƟon failed: " . mysqli_connect_error());
+} 
+$sql = mysqli_query($conn, "SELECT * FROM descripƟve");
+ while($row = mysqli_fetch_array($sql)) { 
+ $b[] = $row['QuesƟon'];
+ $c[]=$row['Answer']; 
+} 
 ?> 
 <!DOCTYPE html> 
 <html> 
-	<head> 
-		<title> Fetch Data From Database </title> 
-	</head> 
-	<body> 
-	<script>
-		var seconds=60;
-          function displayseconds(){
-               seconds -=1;
-			   if(seconds==10){
-				   alert("Time Remaining only 10 seconds");
-			   }
-               document.getElementById("secondsdisplay").innerText="Time remaining :"+seconds+"seconds";
-          }
-          setInterval(displayseconds,1000);
-          function redirect(){
-                 validateTest();
-                
-          }
-          setTimeout("redirect()",60000);
-		function validateTest() {
-			var q1=document.forms["testForm"]["text"].value;
-			var q2=document.forms["testForm"]["text1"].value;
-			var q3=document.forms["testForm"]["text2"].value;
-			var q4=document.forms["testForm"]["text3"].value;
-			var q5=document.forms["testForm"]["text4"].value;
-			var q6=document.forms["testForm"]["text5"].value;
-			var q7=document.forms["testForm"]["text6"].value;
-			var q8=document.forms["testForm"]["text7"].value;
-			var q9=document.forms["testForm"]["text8"].value;
-			var q10=document.forms["testForm"]["text9"].value;
-			var score=0;
-			if(q1=="Delhi"){
-				score++;
-			}
-			if(q2=="High"){
-				score++;
-			}
-			if(q3=="Polyglot")
-				score+=1;
-			if(q4=="Mortuary")
-				score+=1;
-			if(q5=="Reticent")
-				score+=1;
-			if(q6=="Immigrant")
-				score+=1;
-			if(q7=="Monothesim")
-				score+=1;
-			if(q8=="Biography")
-				score+=1;
-			if(q9=="Ornithology")
-				score+=1;
-			if(q10=="Misogynist")
-				score+=1;
-             alert("you scored "+score+ " out of 10");
-             localStorage.setItem("result",score);
-             window.location.href="score.html";
-		}
-		</script>
-		<div id="secondsdisplay"></div>
-		<p><b>"First letter should be capital"</b></p>
-		<form name="testForm">
-		<?php
-			 echo $a[0];
-			?><br>
-			<label for="id1">Answer</label>
-		  <input type="text" name="text" id="id1"><br>
-		 		<?php
-			 echo $a[1];
-			?><br>
-			<label for="id2">Answer</label>
-		  <input type="text" name="text1" id="id2"><br>		
-		  <?php
-			 echo $a[2];
-			?><br>
-			<label for="id3">Answer</label>
-		  <input type="text" name="text2" id="id3"><br>
-		  		<?php
-			 echo $a[3];
-			?><br>
-			<label for="id4">Answer</label>
-		  <input type="text" name="text3" id="id4"><br>
-		  		<?php
-			 echo $a[4];
-			?><br>
-			<label for="id5">Answer</label>
-		  <input type="text" name="text4" id="id5"><br>
-		  		<?php
-			 echo $a[5];
-			?><br>
-			<label for="id6">Answer</label>
-		  <input type="text" name="text5" id="id6"><br>
-		  		<?php
-			 echo $a[6];
-			?><br>
-			<label for="id7">Answer</label>
-		  <input type="text" name="text6" id="id7"><br>
-		  		<?php
-			 echo $a[7];
-			?><br>
-			<label for="id8">Answer</label>
-		  <input type="text" name="text7" id="id8"><br>
-		  		<?php
-			 echo $a[8];
-			?><br>
-			<label for="id9">Answer</label>
-		  <input type="text" name="text8" id="id9"><br>
-		  		<?php
-			 echo $a[9];
-			?><br>
-			<label for="id10">Answer</label>
-		  <input type="text" name="text9" id="id10"><br>
-		  <input type="submit" value="Submit" onclick="validateTest()">
-	</table> 
-	</form>
-	</body> 
-	</html>
+ <head> 
+ <Ɵtle> Fetch Data From Database </Ɵtle> 
+ </head> 
+ <body> 
+ <script> 
+ var seconds=60; 
+ funcƟon displayseconds(){
+ seconds -=1; 
+ if(seconds==10){ 
+ alert("Time Remaining only 10 seconds"); 
+ } 
+ document.getElementById("secondsdisplay").innerText="Time remaining 
+:"+seconds+"seconds"; 
+ } 
+ setInterval(displayseconds,1000); 
+ funcƟon redirect(){
+ window.locaƟon.href="score.php"
+ 
+ } 
+ setTimeout("redirect()",60000); 
+ </script> 
+ <div id="secondsdisplay"></div> 
+ <form name="testForm" acƟon="score1.php" method="post">
+ <label for="Roll">RollNO:</label> 
+ <input type="text" name="roll" id="text"><br> 
+ <p><b>Please enter first leƩer as Upper Case</b></p>
+ <?php 
+ for($i=0;$i<sizeof($b);$i++) 
+ { 
+ $a=$i+1; 
+ echo $a; 
+ echo $b[$i]; 
+ ?> 
+ 
+ <br> 
+ <label for="Answer">Answer</label> 
+ <input type="text" name="<?php echo $i?>" id="Answer"><br> 
+ <?php 
+ } 
+ ?> 
+ <input type="submit" value="submit"> 
+ </form> 
+ </body> 
+</html>

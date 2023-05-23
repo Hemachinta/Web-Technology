@@ -5,16 +5,16 @@ $password = "";
 $dbname = "test"; 
 $conn = new mysqli($servername, $username,'', $dbname); 
 if (!$conn) { 
- die("ConnecƟon failed: " . mysqli_connect_error());
+ die("Connection failed: " . mysqli_connect_error());
 } 
 $sql = mysqli_query($conn, "SELECT * FROM mcq"); 
 $count=0; 
  while($row = mysqli_fetch_array($sql)) { 
- $b[] = $row['QuesƟon'];
- $c[]=$row['OpƟon1'];
- $d[]=$row['OpƟon2'];
- $e[]=$row['OpƟon3'];
- $f[]=$row['OpƟon4'];
+ $b[] = $row['Question'];
+ $c[]=$row['Option1'];
+ $d[]=$row['Option2'];
+ $e[]=$row['Option3'];
+ $f[]=$row['Option4'];
  $g[]=$row['Answer']; 
  $count=$count+1; 
  
@@ -23,12 +23,12 @@ $count=0;
 <!DOCTYPE html> 
 <html> 
  <head> 
- <Ɵtle> Fetch Data From Database </Ɵtle> 
+ <title> Fetch Data From Database </title> 
  </head> 
  <body> 
  <script> 
  var seconds=60; 
- funcƟon displayseconds(){
+ function displayseconds(){
  seconds -=1; 
  if(seconds==10){ 
  alert("Time Remaining only 10 seconds"); 
@@ -37,14 +37,14 @@ $count=0;
 :"+seconds+"seconds"; 
  } 
  setInterval(displayseconds,1000); 
- funcƟon redirect(){
- window.locaƟon.href="score.php"
+ function redirect(){
+ window.location.href="score.php"
  
  } 
  setTimeout("redirect()",60000); 
  </script> 
  <div id="secondsdisplay"></div> 
-<form name="testForm" acƟon="score.php" method="post">
+<form name="testForm" action="score.php" method="post">
  <label for="Roll">RollNO:</label> 
  <input type="text" name="roll" id="text"><br> 
  <?php 

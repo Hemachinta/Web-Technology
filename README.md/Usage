@@ -1,0 +1,8 @@
+1.Install XAMPP software.
+2.Star Apache and MySQl.
+3.Select the admin button of MySQL ,it will open the Php Localhost.
+4.Create database and tables for descriptive,MCQs and finalres.
+5.Insert the questions into the database.
+6.Save all the code files into the C:\xampp\htdocs\Folder Name.
+7.Redirect from http://localhost/phpmyadmin/ to http://localhost/Folder Name/
+8.Run the codes.

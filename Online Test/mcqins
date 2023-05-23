@@ -1,6 +1,6 @@
 <html> 
  <head> 
- <title>Textfield</title>
+ <title>MCQs</title>
  </head> 
  <body> 
  <form action="insquestion.php" method="POST">

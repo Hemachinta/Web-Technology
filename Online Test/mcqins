@@ -1,19 +1,19 @@
 <html> 
  <head> 
- <Ɵtle>Texƞield</Ɵtle>
+ <title>Textfield</title>
  </head> 
  <body> 
- <form acƟon="insquesƟon.php" method="POST">
- <label for="quesƟon">quesƟon</label>
- <input type="text" name="quesƟon" id="quesƟon"><br>
- <label for="opƟon1">opƟon1</label>
- <input type="text" name="opƟon1" id="opƟon1"><br>
- <label for="opƟon2">opƟon2</label>
- <input type="text" name="opƟon2" id="opƟon2"><br>
- <label for="opƟon3">opƟon3</label>
- <input type="text" name="opƟon3" id="opƟon3"><br>
- <label for="opƟon4">opƟon4</label>
- <input type="text" name="opƟon4" id="opƟon4"><br>
+ <form action="insquestion.php" method="POST">
+ <label for="question">question</label>
+ <input type="text" name="question" id="question"><br>
+ <label for="option1">option1</label>
+ <input type="text" name="option1" id="option1"><br>
+ <label for="option2">option2</label>
+ <input type="text" name="option2" id="option2"><br>
+ <label for="option3">option3</label>
+ <input type="text" name="option3" id="option3"><br>
+ <label for="option4">option4</label>
+ <input type="text" name="option4" id="option4"><br>
  <label for="answer">Answer</label> 
  <input type="text" name="answer" id="answer"><br> 
  <input type="submit" value="submit"> 
